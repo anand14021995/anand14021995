@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.alo.eparts.SwipeRevealLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:dragFromEdge="right">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#E8F3FF">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="100dp">
+            <ImageButton
+                android:id="@+id/edit_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/ecit"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Edit"/>
+            <ImageButton
+                android:id="@+id/info_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/delete"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Info"/>
+
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true">
+
+        <com.google.android.material.card.MaterialCardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="5dp"
+                  android:visibility="visible">
+                    <FrameLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:padding="10dp"
+                                    android:backgroundTint="#FFFFFF">
+
+                                    <!-- Media -->
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    >
+
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Customer Name"
+                        android:textSize="16dp"
+                        android:textColor="#43464B"
+                        android:textStyle="bold"
+                        android:lineHeight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/meal_tv"
+                        />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Quote No"
+                            android:textSize="16dp"
+                            android:textColor="#43464B"
+
+                            android:lineHeight="10dp"
+                            android:layout_marginTop="10dp"
+                            />
+                        <TextView
+                            android:id="@+id/quote"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=": 765432"
+                            android:textSize="16dp"
+                            android:textColor="#43464B"
+
+                            android:lineHeight="10dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Email"
+                            android:textSize="16dp"
+                            android:textColor="#43464B"
+
+                            android:lineHeight="10dp"
+                            android:layout_marginTop="10dp"
+                            />
+                        <TextView
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=": xyz@gmail.com"
+                            android:textSize="16dp"
+                            android:textColor="#43464B"
+
+                            android:lineHeight="10dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Phone"
+                            android:textSize="16dp"
+                            android:textColor="#43464B"
+
+                            android:lineHeight="10dp"
+                            android:layout_marginTop="10dp"
+                            />
+                        <TextView
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=": 9876543210"
+                            android:textSize="16dp"
+                            android:textColor="#43464B"
+
+                            android:lineHeight="10dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Created Date and Time"
+                            android:textSize="16dp"
+                            android:textColor="#43464B"
+
+                            android:lineHeight="10dp"
+                            android:layout_marginTop="10dp"
+                            />
+                        <TextView
+
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=":  28-06-2021"
+                            android:textSize="16dp"
+                            android:textColor="#43464B"
+
+                            android:lineHeight="10dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+
+
+
+
+                    </LinearLayout>
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="AED 100"
+                        android:textSize="16dp"
+                        android:textColor="#0070DF"
+                        android:textStyle="bold"
+                        android:lineHeight="10dp"
+                        android:layout_marginTop="5dp"
+                        />
+                </LinearLayout>
+
+                <!-- Buttons -->
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="80dp"-->
+<!--            app:cardElevation="5dp"-->
+<!--            app:cardCornerRadius="8dp"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:visibility="visible">-->
+
+<!--            <FrameLayout-->
+<!--                xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:padding="10dp">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/meal_tv"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:fontFamily="sans-serif-smallcaps"-->
+<!--                    android:text="Salmon"/>-->
+
+<!--            </FrameLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+    </FrameLayout>
+
+</com.alo.eparts.SwipeRevealLayout>

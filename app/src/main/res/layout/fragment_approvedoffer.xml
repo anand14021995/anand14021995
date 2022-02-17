@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApprovedOffer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/curve_white1"
+        android:orientation="vertical">
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|right"
+                    android:orientation="horizontal"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/curve_grey"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <EditText
+                            android:id="@+id/editMobileNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Search by VIN no/Parts no"></EditText>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/searchblue"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="31dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/serachb" />
+                    </LinearLayout>
+                </LinearLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_view"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="10dp"
+                    android:backgroundTint="@color/cardview_shadow_end_color"
+                    android:layout_marginTop="20dp">
+
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/curve_grey"
+                        android:orientation="vertical"
+                        android:weightSum="1"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="29dp"
+                            android:layout_marginTop="5dp"
+                            android:text=" Part Name"
+                            android:textAlignment="center"
+                            android:textColor="#43464B"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:background="@null"
+                            android:minHeight="0dp"
+                            android:minWidth="0dp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="29dp"
+                            android:layout_marginTop="5dp"
+                            android:text=" Product Type  :  Genuine"
+                            android:textAlignment="center"
+                            android:textColor="#43464B"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:background="@null"
+                            android:minHeight="0dp"
+                            android:minWidth="0dp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="29dp"
+                            android:layout_marginTop="5dp"
+                            android:text=" Product Id  :  : 1234569"
+                            android:textAlignment="center"
+                            android:textColor="#43464B"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:background="@null"
+                            android:minHeight="0dp"
+                            android:minWidth="0dp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="29dp"
+                            android:layout_marginTop="5dp"
+                            android:text=" Delivery :  30-06-2021"
+                            android:textAlignment="center"
+                            android:textColor="#43464B"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:background="@null"
+                            android:minHeight="0dp"
+                            android:minWidth="0dp"
+
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="29dp"
+                                android:layout_marginTop="5dp"
+                                android:lineHeight="30dp"
+                                android:paddingLeft="10dp"
+                                android:text="AED 93.82"
+
+                                android:textColor="#0070DF"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#0070DF"
+
+                                android:text="Addtocart"
+                                android:textColor="@color/white"
+                                android:layout_marginLeft="150dp"
+                                android:id="@+id/vieworder"
+                                android:onClick="vieworderclicked"
+                                tools:ignore="OnClick"/>
+                        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</FrameLayout>

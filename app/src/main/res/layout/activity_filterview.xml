@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/curve_white"
+    app:cardCornerRadius="10dp"
+    >
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/curve_white">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Filters"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:id="@+id/closeFilter"
+                android:layout_width="20dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:layout_margin="10dp">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Orgin Filter"
+            android:padding="10dp"
+            android:textSize="16dp"
+            android:textColor="#43464B"
+            android:textFontWeight="500"/>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OEM"
+            android:textColor="#43464B"
+
+            android:backgroundTint="#E8F3FF"/>
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="After Market"
+            android:textColor="#43464B"
+
+            android:backgroundTint="#E8F3FF"/>
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Used Product"
+            android:textColor="#43464B"
+
+            android:backgroundTint="#E8F3FF"/>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textSize="15dp"
+            android:textColor="#43464B"
+            android:textFontWeight="700"/>
+
+
+
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/curve_grey"
+            android:inputType="date"
+            android:drawableRight="@drawable/date"
+            android:drawablePadding="8dp"
+            android:hint="From Date"
+            android:id="@+id/selectdate"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date Range"
+            android:padding="10dp"
+            android:textSize="16dp"
+            android:textColor="
+#43464B"
+            android:textFontWeight="700"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/curve_grey"
+            android:inputType="date"
+            android:drawableRight="@drawable/date"
+            android:drawablePadding="8dp"
+            android:hint="From Date"
+
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp"
+            />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/curve_grey"
+            android:inputType="date"
+            android:drawableRight="@drawable/date"
+            android:drawablePadding="8dp"
+            android:hint="To Date"
+
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Reaset"
+                android:layout_marginRight="5dp"
+                android:textColor="#43464B"
+                android:textFontWeight="700"
+                android:backgroundTint="#EDEDEE"/>
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Apply"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/white"
+                android:textFontWeight="700"
+                android:backgroundTint="#0070DF"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/editTextDate2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date" />
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

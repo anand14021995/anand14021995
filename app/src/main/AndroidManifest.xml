@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.alo.eparts">
+
+    <uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="31" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:extractNativeLibs="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Eparts"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ManageSubscriptionSlider"></activity>
+        <activity android:name=".partsrequestedit" />
+        <activity android:name=".ManageUnavailability">
+
+        </activity>
+        <activity android:name=".proceedSavetoQuote" />
+        <activity android:name=".manageQuoteEdit" />
+        <activity android:name=".manageQuotes" />
+        <activity
+            android:name=".MakeOfferNew"
+            android:label="@string/title_activity_make_offer_new"
+            android:theme="@style/Theme.Eparts.NoActionBar" />
+        <activity android:name=".MakeOffer" />
+        <activity android:name=".ManageTeam" />
+        <activity android:name=".saveQuote" />
+        <activity android:name=".payment" />
+        <activity android:name=".Review" />
+        <activity android:name=".DeliveryActivity" />
+        <activity android:name=".cart" />
+        <activity android:name=".BuypartsOrder" />
+        <activity android:name=".ManageSubscription" >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".ManagePayment" />
+        <activity android:name=".profileActivity" />
+        <activity android:name=".OrderDetails" />
+        <activity android:name=".orderCompleted" />
+        <activity
+            android:name=".myOrdersActivity"
+            android:label="@string/title_activity_my_orders"
+            android:theme="@style/Theme.Eparts.NoActionBar" />
+        <activity android:name=".recycler.notificationActivity" />
+        <activity
+            android:name=".navigationbar"
+            android:label="@string/title_activity_navigationbar"
+            android:theme="@style/Theme.Eparts.NoActionBar" />
+        <activity android:name=".oem_catelogmodel" />
+        <activity android:name=".oem_activityfilterall" />
+        <activity android:name=".oemcatelogfilteropen" />
+        <activity android:name=".oemFilterActivity" />
+        <activity android:name=".oem_catelogActivity" />
+        <activity android:name=".OemCatelogActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".LoginActivity1" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".Intro4Activity" />
+        <activity android:name=".Intro3Activity" />
+        <activity android:name=".Intro2Activity" />
+        <activity android:name=".Intro1Activity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
