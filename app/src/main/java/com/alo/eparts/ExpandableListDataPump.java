@@ -9,27 +9,27 @@ public class ExpandableListDataPump {
         HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
 
         List<String> cricket = new ArrayList<String>();
-        cricket.add("Aerialsssss Amplifier for sound system Connection for external audio sources Control unit for infor- mation electronics Data plate");
-        /*cricket.add("Pakistan");
-        cricket.add("Australia");
-        cricket.add("England");
-        cricket.add("South Africa");*/
+        cricket.add("Aerialsssss");
+        cricket.add("Amplifier for sound system");
+        cricket.add("Connection for external audio sources");
+        cricket.add("Control unit for infor-mation electronics");
+        cricket.add("Data Plate");
 
         List<String> football = new ArrayList<String>();
-        football.add("Brazil");
-        football.add("Spain");
-        football.add("Germany");
-        football.add("Netherlands");
-        football.add("Italy");
+//        football.add("Brazil");
+//        football.add("Spain");
+//        football.add("Germany");
+//        football.add("Netherlands");
+//        football.add("Italy");
 
         List<String> basketball = new ArrayList<String>();
-        basketball.add("United States");
-        basketball.add("Spain");
-        basketball.add("Argentina");
-        basketball.add("France");
-        basketball.add("Russia");
+//        basketball.add("United States");
+//        basketball.add("Spain");
+//        basketball.add("Argentina");
+//        basketball.add("France");
+//        basketball.add("Russia");
 
-        expandableListDetail.put("Access Infotainment", cricket);
+        expandableListDetail.put("Access, Infotainment, Miscell", cricket);
         expandableListDetail.put("Bodysss", football);
         expandableListDetail.put("Electrics", basketball);
         return expandableListDetail;

@@ -60,11 +60,11 @@
             <!--Header End-->
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="bottom"
+
                     android:layout_weight="1"
                     android:background="@drawable/curve_white"
                     android:backgroundTint="@color/white"
@@ -74,19 +74,19 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center|right"
+
                         android:orientation="horizontal"
                         >
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@drawable/curve_grey"
                             android:layout_marginTop="10dp"
                             >
 
                             <EditText
-                                android:id="@+id/editMobileNo"
+                                android:id="@+id/searchvin"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:layout_margin="5dp"
@@ -115,18 +115,18 @@
                         </LinearLayout>
                     </LinearLayout>
                     <!--Search Box End-->
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+<!--                    <ScrollView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
                             android:orientation="vertical">
                             <com.google.android.material.card.MaterialCardView
                                 android:id="@+id/card"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_margin="8dp"
                                 android:backgroundTint="@color/cardview_shadow_end_color">
 
@@ -144,7 +144,7 @@
                                         android:layout_height="wrap_content"
                                         android:orientation="vertical"
                                         android:layout_marginTop="10dp"
-                                        >
+                                        android:id="@+id/oemtitle">
 
 
                                         <TextView
@@ -180,7 +180,8 @@
                                         <LinearLayout
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:orientation="horizontal">
+                                            android:orientation="horizontal"
+                                            android:id="@+id/carimage">
                                             <ImageView
                                                 android:layout_width="50dp"
                                                 android:layout_height="50dp"
@@ -214,7 +215,8 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="10dp"
                                         android:orientation="vertical"
-                                        android:background="@drawable/curve_grey">
+                                        android:background="@drawable/curve_grey"
+                                        android:id="@+id/branddetail">
                                         <LinearLayout
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
@@ -314,44 +316,43 @@
 
                             </com.google.android.material.card.MaterialCardView>
 
-                            <com.google.android.material.card.MaterialCardView
-                                android:id="@+id/card1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:backgroundTint="@color/cardview_shadow_end_color">
+<!--                            <com.google.android.material.card.MaterialCardView-->
+<!--                                android:id="@+id/card1"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_margin="8dp"-->
+<!--                                android:backgroundTint="@color/cardview_shadow_end_color">-->
 
-                                <ScrollView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
 
-                                    <LinearLayout
+
+                                    <RelativeLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:orientation="vertical"
-                                        android:padding="10dp">
+                                        android:padding="10dp"
+                                        android:backgroundTint="#FFFFFF">
 
                                         <!-- Accodrian Start -->
 
                                         <ExpandableListView
                                             android:id="@+id/expandableListView"
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:backgroundTint="@color/light_grey"
+                                            android:layout_height="200dp"
+                                            android:background="#FFFFFF"
+                                            android:backgroundTint="#FFFFFF"
                                             android:divider="@android:color/darker_gray"
-
                                             android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight" />
 
 
                                         <!-- Accordian End -->
 
-                                    </LinearLayout>
-                                </ScrollView>
-                            </com.google.android.material.card.MaterialCardView>
+                                    </RelativeLayout>
+
+<!--                            </com.google.android.material.card.MaterialCardView>-->
                         </LinearLayout>
 
 
-                    </ScrollView>
+<!--                    </ScrollView>-->
                 </LinearLayout>
             </ScrollView>
 

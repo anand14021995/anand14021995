@@ -4,6 +4,7 @@ import com.alo.eparts.RestApi.User;
 import com.alo.eparts.ui.ModelData;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -35,4 +36,7 @@ public interface RetrofitAPI {
 
     @GET("andgetstatelist/{countryid}")
     Call<ArrayList<ModelData>> getAllModel(@Path("countryid") String countryid);
+
+    @GET("andgetby_id/{id}")
+    Call<List<VinData>> getAllVin(@Path("id") String id);
 }

@@ -80,6 +80,8 @@ public class BuypartsOrder extends AppCompatActivity {
             displayInteger.setText("" + number);
         }
 
+
+
     public void showPopupWindow(final View view)
     {
         //Create a View object yourself through inflater

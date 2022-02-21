@@ -156,7 +156,7 @@ public class manageQuoteEdit extends AppCompatActivity implements AdapterView.On
     private String item;
     private void getModelList(String item) {
        this.item =item;
-       // Toast.makeText(manageQuoteEdit.this, "Selected Item is11: \t" + item, Toast.LENGTH_LONG).show();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.7.10:3000/api/common_management/")
                 .addConverterFactory(GsonConverterFactory.create())

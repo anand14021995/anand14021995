@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
@@ -30,6 +32,26 @@ public class oemcatelogfilteropen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oemcatelogfilteropen);
+        Bundle bundle = getIntent().getExtras();
+        String Vin = bundle.getString("searchVin");
+        EditText searchvin = findViewById(R.id.searchvin);
+        TextView modify = (TextView)findViewById(R.id.modify);
+        LinearLayout carimage = (LinearLayout)findViewById(R.id.carimage);
+        LinearLayout branddetail = (LinearLayout)findViewById(R.id.branddetail);
+        LinearLayout oemtitle = (LinearLayout)findViewById(R.id.oemtitle);
+        searchvin.setText(Vin);
+        if(Vin == "")
+        {
+
+        }else
+        {
+            Toast.makeText(this,"dataaa=="+Vin,Toast.LENGTH_SHORT).show();
+            modify.setVisibility(View.GONE);
+            carimage.setVisibility(View.GONE);
+            branddetail.setVisibility(View.GONE);
+            oemtitle.setVisibility(View.GONE);
+
+        }
         backIconImageView = findViewById(R.id.backIconImageView);
         propic = findViewById(R.id.propic);
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
@@ -72,7 +94,7 @@ public class oemcatelogfilteropen extends AppCompatActivity {
             }
         });
 
-        modify = (TextView)findViewById(R.id.modify);
+
         modify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

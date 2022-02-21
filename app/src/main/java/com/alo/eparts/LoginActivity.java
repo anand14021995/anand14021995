@@ -2,7 +2,9 @@ package com.alo.eparts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,6 +34,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     EditText etuseremail , etuserpass;
+    TextView forgotopen;
     Button sendButton;
 
     @Override
@@ -42,7 +45,18 @@ public class LoginActivity extends AppCompatActivity {
 
         etuseremail = (EditText)findViewById(R.id.editTextPhone);
         etuserpass = (EditText)findViewById(R.id.editTextPassword);
+        forgotopen = (TextView)findViewById(R.id.forgotopen);
+
         sendButton = (Button)findViewById(R.id.buttonApply);
+
+        /*Forgot Clicked*/
+        forgotopen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
 
         //loginButton
         sendButton.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +66,31 @@ public class LoginActivity extends AppCompatActivity {
                 CallLoginService();
             }
         });
+    }
+
+    protected void onResume()
+    {
+        super.onResume();
+        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String s1 = sh.getString("etuseremail", "");
+        String a = sh.getString("etuserpass", "");
+        etuseremail.setText(s1);
+        etuserpass.setText(String.valueOf(a));
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Creating a shared pref object
+        // with a file name "MySharedPref"
+        // in private mode
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+        // write all the data entered by the user in SharedPreference and apply
+        myEdit.putString("etuseremail", etuseremail.getText().toString());
+        myEdit.putString("etuserpass", etuserpass.getText().toString());
+        myEdit.apply();
     }
 
     private void CallLoginService()
@@ -93,6 +132,7 @@ public class LoginActivity extends AppCompatActivity {
                             {
                                 Intent intent=new Intent(LoginActivity.this,navigationbar.class);
                                 startActivity(intent);
+                                finish();
                             }
 
                             //Toast.makeText(LoginActivity.this,"Token Got Successfull",Toast.LENGTH_SHORT).show();

@@ -141,9 +141,9 @@
                         android:layout_gravity="center"
                         android:layout_marginHorizontal="15dp"
                         android:gravity="center"
-                        android:onClick="@{(v)-> viewModel.onForgotClicked(v)}"
                         android:text="Forgot your password?"
-                        android:textColor="@color/blue" />
+                        android:textColor="@color/blue"
+                        android:id="@+id/forgotopen"/>
 
                     <TextView
                         android:layout_width="match_parent"

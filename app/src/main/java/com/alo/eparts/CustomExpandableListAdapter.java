@@ -1,6 +1,7 @@
 package com.alo.eparts;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -81,6 +82,14 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.listTitle);
         listTitleTextView.setTypeface(null, Typeface.BOLD);
         listTitleTextView.setText(listTitle);
+        listTitleTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,oemFilterActivity.class);
+                context.startActivity(intent);
+
+            }
+        });
         return convertView;
     }
 

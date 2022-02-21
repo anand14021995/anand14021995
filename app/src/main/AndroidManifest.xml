@@ -19,11 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Eparts"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ManageSubscriptionSlider"></activity>
+        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".SearchVin" />
+        <activity android:name=".ManageSubscriptionSlider" />
         <activity android:name=".partsrequestedit" />
-        <activity android:name=".ManageUnavailability">
-
-        </activity>
+        <activity android:name=".ManageUnavailability" />
         <activity android:name=".proceedSavetoQuote" />
         <activity android:name=".manageQuoteEdit" />
         <activity android:name=".manageQuotes" />
@@ -39,12 +39,14 @@
         <activity android:name=".DeliveryActivity" />
         <activity android:name=".cart" />
         <activity android:name=".BuypartsOrder" />
-        <activity android:name=".ManageSubscription" >
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <activity android:name=".ManageSubscription">
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".ManagePayment" />
         <activity android:name=".profileActivity" />
@@ -66,7 +68,6 @@
         <activity android:name=".oem_catelogActivity" />
         <activity android:name=".OemCatelogActivity" />
         <activity android:name=".DashboardActivity" />
-        <activity android:name=".LoginActivity1" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Intro4Activity" />
         <activity android:name=".Intro3Activity" />

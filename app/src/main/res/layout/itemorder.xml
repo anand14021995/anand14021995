@@ -1,101 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="144dp"
+    android:layout_height="144dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="5dp"
+    android:id="@+id/phoneCardview"
+    app:cardElevation="6dp">
+
+    <RelativeLayout
+        android:id="@+id/backgroundcolor"
+        android:layout_width="144dp"
+        android:layout_height="144dp">
 
 
-                    <GridLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/phoneimage"
+            android:layout_width="150dp"
+            android:src="@drawable/neworder"
+            android:layout_height="150dp" />
 
-                        android:columnCount="3"
-                        android:rowCount="2"
-                        android:id="@+id/root">
+        <TextView
+            android:id="@+id/phonetitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-6dp"
+            android:text="Samsung"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="80dp"
+            android:textSize="25sp"
+            android:visibility="gone"/>
 
-                        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_margin="10dp"
-                            app:cardBackgroundColor="@color/white"
-                            app:cardCornerRadius="10dp"
-                            app:cardElevation="5dp"
-                            app:cardMaxElevation="5dp"
-                            app:cardPreventCornerOverlap="true">
-
-                            <ImageView
-                                android:id="@+id/imageViewMain"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_weight="1"
-                                android:paddingLeft="10dp"
-                                android:layout_gravity="center"
-                                app:srcCompat="@drawable/neworder" />
+    </RelativeLayout>
 
 
-
-
-                        </androidx.cardview.widget.CardView>
-
-<!--                        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--                            xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_gravity="center"-->
-
-<!--                            app:cardBackgroundColor="@color/white"-->
-<!--                            app:cardCornerRadius="10dp"-->
-<!--                            app:cardElevation="5dp"-->
-<!--                            app:cardMaxElevation="5dp"-->
-<!--                            app:cardPreventCornerOverlap="true">-->
-
-<!--                            <ImageView-->
-
-<!--                                android:layout_width="100dp"-->
-<!--                                android:layout_height="100dp"-->
-<!--                                android:layout_marginLeft="10dp"-->
-<!--                                android:layout_marginRight="10dp"-->
-<!--                                android:layout_weight="1"-->
-<!--                                android:paddingLeft="10dp"-->
-<!--                                android:layout_gravity="center"-->
-<!--                                app:srcCompat="@drawable/inprogressorder" />-->
-
-
-<!--                        </androidx.cardview.widget.CardView>-->
-<!--                        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--                            xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_gravity="center"-->
-<!--                            android:layout_margin="10dp"-->
-<!--                            app:cardBackgroundColor="@color/white"-->
-<!--                            app:cardCornerRadius="10dp"-->
-<!--                            app:cardElevation="5dp"-->
-<!--                            app:cardMaxElevation="5dp"-->
-<!--                            app:cardPreventCornerOverlap="true">-->
-
-<!--                            <ImageView-->
-
-<!--                                android:layout_width="100dp"-->
-<!--                                android:layout_height="100dp"-->
-<!--                                android:layout_marginLeft="10dp"-->
-<!--                                android:layout_marginRight="10dp"-->
-<!--                                android:layout_weight="1"-->
-<!--                                android:paddingLeft="10dp"-->
-<!--                                android:layout_gravity="center"-->
-<!--                                app:srcCompat="@drawable/inprogressorder" />-->
-
-
-<!--                        </androidx.cardview.widget.CardView>-->
-                    </GridLayout>
-<!--    <ImageView-->
-<!--        android:id="@+id/imageViewMain"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="match_parent"/>-->
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

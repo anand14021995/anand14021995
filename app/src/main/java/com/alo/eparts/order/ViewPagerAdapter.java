@@ -47,7 +47,7 @@ public class ViewPagerAdapter extends PagerAdapter {
         // referencing the image view from the item.xml file
         ImageView imageView = (ImageView) itemView.findViewById(R.id.imageViewMain);
         Toast.makeText(context, "Hello Javatpoint"+orders.length, Toast.LENGTH_SHORT).show();
-        GridLayout root =(GridLayout)itemView.findViewById(R.id.root);
+//        GridLayout root =(GridLayout)itemView.findViewById(R.id.root);
         for(int i=0;i<=orders.length;i++)
         {
             imageView.setImageResource(orders[position]);
