@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.alo.eparts.recycler.notificationActivity;
 
@@ -21,6 +22,25 @@ public class OrderDetails extends AppCompatActivity {
         backIconImageView = findViewById(R.id.backIconImageView);
         propic = findViewById(R.id.propic);
         itemclick = findViewById(R.id.itemclick);
+        TextView moredetails = (TextView)findViewById(R.id.moredetails);
+        moredetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String more =moredetails.getText().toString();
+                if(more=="More Details")
+                {
+                    LinearLayout moredetailsview = (LinearLayout)findViewById(R.id.moredetailsview);
+                    moredetailsview.setVisibility(View.VISIBLE);
+                    moredetails.setText("Less Details");
+                }else
+                {
+                    LinearLayout moredetailsview = (LinearLayout)findViewById(R.id.moredetailsview);
+                    moredetailsview.setVisibility(View.GONE);
+                    moredetails.setText("More Details");
+                }
+
+            }
+        });
         //notification clicked
         propic.setOnClickListener(new View.OnClickListener() {
             @Override

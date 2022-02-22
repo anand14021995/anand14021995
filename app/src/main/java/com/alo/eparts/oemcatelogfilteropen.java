@@ -36,6 +36,7 @@ public class oemcatelogfilteropen extends AppCompatActivity {
         String Vin = bundle.getString("searchVin");
         EditText searchvin = findViewById(R.id.searchvin);
         TextView modify = (TextView)findViewById(R.id.modify);
+        TextView carname=(TextView)findViewById(R.id.carname);
         LinearLayout carimage = (LinearLayout)findViewById(R.id.carimage);
         LinearLayout branddetail = (LinearLayout)findViewById(R.id.branddetail);
         LinearLayout oemtitle = (LinearLayout)findViewById(R.id.oemtitle);
@@ -45,11 +46,13 @@ public class oemcatelogfilteropen extends AppCompatActivity {
 
         }else
         {
-            Toast.makeText(this,"dataaa=="+Vin,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"dataaa=="+Vin,Toast.LENGTH_SHORT).show();
             modify.setVisibility(View.GONE);
             carimage.setVisibility(View.GONE);
             branddetail.setVisibility(View.GONE);
             oemtitle.setVisibility(View.GONE);
+            carname.setCompoundDrawablesWithIntrinsicBounds(
+                    R.drawable.sedan, 0, 0, 0);
 
         }
         backIconImageView = findViewById(R.id.backIconImageView);
@@ -66,6 +69,10 @@ public class oemcatelogfilteropen extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),
                         expandableListTitle.get(groupPosition) + " List Expanded.",
                         Toast.LENGTH_SHORT).show();
+                if(groupPosition==0)
+                {
+
+                }
             }
         });
         expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
@@ -90,6 +97,26 @@ public class oemcatelogfilteropen extends AppCompatActivity {
                                 expandableListTitle.get(groupPosition)).get(
                                 childPosition), Toast.LENGTH_SHORT
                 ).show();
+
+                if(groupPosition==0)
+                {
+                    if (childPosition == 0)
+                    {
+                        Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_SHORT).show();
+                        Intent c = new Intent(getApplicationContext(),BuyPartsStockorder.class);
+                        startActivity(c);
+                    }
+
+                }if (groupPosition == 1) {
+
+                    if (childPosition == 0)
+                    {
+                        Intent c = new Intent(getApplicationContext(),BuyPartsStockorder.class);
+                        startActivity(c);
+                    }
+
+
+                }
                 return false;
             }
         });

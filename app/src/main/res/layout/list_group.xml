@@ -2,15 +2,18 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:backgroundTint="#F8FBFF">
 
     <TextView
         android:id="@+id/listTitle"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:background="#F8FBFF"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textStyle="bold"
+        android:textSize="16dp"
         android:textColor="#0070DF" />
 </LinearLayout>

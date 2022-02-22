@@ -23,15 +23,15 @@ public class Wallet extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_wallet, container, false);
 
-        Button button;
-        button = (Button) view.findViewById(vieworder);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), OrderDetails.class);
-//                startActivity(intent);
-//            }
-//        });
+        Button addamount;
+        addamount = (Button) view.findViewById(R.id.addamount);
+        addamount.setOnClickListener(new View.OnClickListener() {
+         @Override
+           public void onClick(View v) {
+              Intent intent = new Intent(getActivity(), walletpayementadd.class);
+               startActivity(intent);
+           }
+       });
         return view;
     }
 }

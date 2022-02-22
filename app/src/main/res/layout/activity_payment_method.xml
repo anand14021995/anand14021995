@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ManagePayment">
-
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".payment_method">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,7 +37,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Manage Payment"
+                    android:text="Add Amount"
                     android:textColor="#0070DF"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -62,43 +61,78 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:layout_weight="2"
-                android:background="@drawable/curve_white"
-                android:backgroundTint="@color/white"
-                android:layout_margin="10dp"
+                android:background="@drawable/curve_white1"
                 android:orientation="vertical">
-                <com.google.android.material.appbar.AppBarLayout
+
+
+
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/Theme.Eparts.AppBarOverlay">
-
-                    <!-- <TextView
-                         android:id="@+id/title"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:gravity="center"
-                         android:minHeight="?actionBarSize"
-                         android:padding="@dimen/appbar_padding"
-                         android:text="@string/app_name"
-                         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />-->
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tabLayout"
+                    android:layout_marginTop="10dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:tabTextColor="#8E8E8E"
-                        app:tabSelectedTextColor="#0070DF"
-                        app:tabIndicatorColor="#0070DF"
-                        app:tabBackground="@drawable/tab_selector"
-                        />
-                </com.google.android.material.appbar.AppBarLayout>
+                        android:layout_margin="8dp"
+                        android:backgroundTint="@color/cardview_shadow_end_color">
 
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/viewPager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Net banking"
+                            android:drawableLeft="@drawable/laptop"
+                            android:drawablePadding="10dp"
+                            />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Debit card"
+                                android:drawableLeft="@drawable/debit"
+                                android:drawablePadding="10dp"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Credit Card"
+                                android:drawableLeft="@drawable/credit"
+                                android:drawablePadding="10dp"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="UPI"
+                                android:drawableLeft="@drawable/upi"
+                                android:drawablePadding="10dp"
+                                />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
 
             </LinearLayout>
         </LinearLayout>
@@ -228,11 +262,4 @@
 
 
 
-    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />-->
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
