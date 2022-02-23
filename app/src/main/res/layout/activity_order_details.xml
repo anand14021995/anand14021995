@@ -235,11 +235,21 @@
                                 android:layout_height="match_parent"
                                 android:orientation="vertical"
                                 android:id="@+id/moredetailsview"
+                                android:layout_margin="10dp"
+                                android:backgroundTint="#FAFAFA"
                                 android:visibility="gone">
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:text="Part Number : 12345678912345"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="Delivered date : 30.05.2021"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="Warehouse Number : 123456789123"/>
                             </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>

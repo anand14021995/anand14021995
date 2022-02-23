@@ -188,27 +188,6 @@
                                 </LinearLayout>
 
                                 <!-- Buttons -->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
-                                    android:orientation="vertical"
-                                    android:background="@drawable/curve_grey">
-                                    <com.google.android.material.button.MaterialButton
-                                        android:layout_width="match_parent"
-                                        android:layout_height="60dp"
-                                        android:layout_marginEnd="8dp"
-                                        android:text="Brand"
-                                        android:textColor="#43464B"
-                                        android:textAlignment="viewStart"
-                                        android:textSize="14dp"
-                                        android:drawableRight="@drawable/downchevron"
-                                        android:backgroundTint="#F8FBFF"
-
-                                        android:textAppearance="?android:attr/textAppearanceSmall"
-                                        android:id="@+id/brand"/>
-
-                                </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -216,40 +195,86 @@
                                     android:layout_marginTop="10dp"
                                     android:orientation="vertical"
                                     android:background="@drawable/curve_grey">
-                                    <com.google.android.material.button.MaterialButton
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/CustomExposedDropMenu"
                                         android:layout_width="match_parent"
-                                        android:layout_height="60dp"
-                                        android:layout_marginEnd="8dp"
-                                        android:text="Model"
-                                        android:textColor="#43464B"
-                                        android:textAlignment="viewStart"
-                                        android:textSize="14dp"
-                                        android:drawableRight="@drawable/downchevron"
-                                        android:backgroundTint="#F8FBFF"
-                                        android:textAppearance="?android:attr/textAppearanceSmall"
-                                        />
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginRight="10dp"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <!-- Inside text input layout add
+                                              an auto complete text view
+                                                and make its input type to none-->
+                                        <AutoCompleteTextView
+                                            android:id="@+id/autoCompleteTextView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:inputType="none"
+                                            android:padding="20dp"
+                                            android:text="Select the Brand" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/CustomExposedDropMenu"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginRight="10dp"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <!-- Inside text input layout add
+                                              an auto complete text view
+                                                and make its input type to none-->
+                                        <AutoCompleteTextView
+                                            android:id="@+id/modelautoCompleteTextView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:inputType="none"
+                                            android:padding="10dp"
+                                            android:text="Select the model"
+                                            />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/brand"
+                                        android:layout_width="137dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:backgroundTint="#0070DF"
+                                        android:text="Search"
+                                        android:textAllCaps="false" />
 
                                 </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
-                                    android:orientation="vertical"
-                                    android:background="@drawable/curve_grey">
-                                    <com.google.android.material.button.MaterialButton
-                                        android:layout_width="match_parent"
-                                        android:layout_height="60dp"
-                                        android:layout_marginEnd="8dp"
-                                        android:text="Model"
-                                        android:textColor="#43464B"
-                                        android:textAlignment="viewStart"
-                                        android:textSize="14dp"
-                                        android:drawableRight="@drawable/downchevron"
-                                        android:backgroundTint="#F8FBFF"
-                                        android:textAppearance="?android:attr/textAppearanceSmall"
-                                        />
 
-                                </LinearLayout>
+
+<!--                                <LinearLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginTop="10dp"-->
+<!--                                    android:orientation="vertical"-->
+<!--                                    android:background="@drawable/curve_grey">-->
+<!--                                    <com.google.android.material.button.MaterialButton-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="60dp"-->
+<!--                                        android:layout_marginEnd="8dp"-->
+<!--                                        android:text="Model"-->
+<!--                                        android:textColor="#43464B"-->
+<!--                                        android:textAlignment="viewStart"-->
+<!--                                        android:textSize="14dp"-->
+<!--                                        android:drawableRight="@drawable/downchevron"-->
+<!--                                        android:backgroundTint="#F8FBFF"-->
+<!--                                        android:textAppearance="?android:attr/textAppearanceSmall"-->
+<!--                                        />-->
+
+<!--                                </LinearLayout>-->
 
 
 

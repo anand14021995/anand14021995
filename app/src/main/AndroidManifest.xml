@@ -22,7 +22,13 @@
         <activity android:name=".payment_method"></activity>
         <activity android:name=".walletpayementadd" />
         <activity android:name=".BuyPartsStockorder" />
-        <activity android:name=".ForgotPassword" />
+        <activity android:name=".ForgotPassword" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="message/rfc822"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".SearchVin" />
         <activity android:name=".ManageSubscriptionSlider" />
         <activity android:name=".partsrequestedit" />
