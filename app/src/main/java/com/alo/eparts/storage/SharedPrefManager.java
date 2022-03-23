@@ -31,6 +31,7 @@ public class SharedPrefManager {
         editor.putInt("roleid",data.getRoleId());
         editor.apply();
     }
+//    Logged in
     public boolean isLoggedIn()
     {
         SharedPreferences sharedPreferences=mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
