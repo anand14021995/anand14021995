@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.alo.eparts.storage.SharedPrefManager;
+
 public class MainActivity extends AppCompatActivity {
 
     private Object MainActivity;
@@ -34,15 +36,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    protected void onResume()
-    {
-        super.onResume();
-        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        String s1 = sh.getString("etuseremail", "");
-        String a = sh.getString("etuserpass", "");
-        Toast.makeText(this,s1,Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(MainActivity.this,navigationbar.class);
-        startActivity(intent);
+//    protected void onResume()
+//    {
+//        super.onResume();
+//        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+//        String s1 = sh.getString("etuseremail", "");
+//        String a = sh.getString("etuserpass", "");
+//        Toast.makeText(this,s1,Toast.LENGTH_SHORT).show();
+//        Intent intent=new Intent(MainActivity.this,navigationbar.class);
+//        startActivity(intent);
+//    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(SharedPrefManager.getInstance(this).isLoggedIn())
+        {
+            Intent intent=new Intent(this,navigationbar.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
     }
 
 

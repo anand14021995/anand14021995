@@ -61,6 +61,10 @@
             android:icon="@drawable/ic_vector__1_"
             android:title="Reports" />
         <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_vector__1_"
+            android:title="Settings" />
+        <item
             android:id="@+id/logout"
             android:icon="@drawable/ic_vector__2_"
             android:title="Logout" />

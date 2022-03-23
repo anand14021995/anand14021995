@@ -38,6 +38,8 @@ public class OemCatelogActivity extends AppCompatActivity {
     List<String> codesid = new ArrayList<String>();
     List<String> model =new ArrayList<String>();
     String HoldAutocompletetextview,modelHoldAutocompletetextview;
+    private String HoldAutocompletetextviewtext,modelHoldAutocompletetextviewtext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,14 +66,19 @@ public class OemCatelogActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 HoldAutocompletetextview = autoCompleteTextView.getText().toString();
+                HoldAutocompletetextviewtext = autoCompleteTextView.getEditableText().toString();
+                modelHoldAutocompletetextviewtext = modelautoCompleteTextView.getEditableText().toString();
+
                 modelHoldAutocompletetextview = modelautoCompleteTextView.getText().toString();
 
 //                Intent intent=new Intent(OemCatelogActivity.this,oem_catelogActivity.class);
 //                startActivity(intent);
-                if(HoldAutocompletetextview=="Select the Brand")
+                if(HoldAutocompletetextviewtext.equals("Select the Brand") && modelHoldAutocompletetextviewtext.equals("Select the model"))
                 {
                  Toast.makeText(OemCatelogActivity.this,"Please Select Brand and Model",Toast.LENGTH_SHORT).show();
-                }else
+
+                }
+                else
                 {
                     Intent intent=new Intent(OemCatelogActivity.this,oem_catelogmodel.class);
 

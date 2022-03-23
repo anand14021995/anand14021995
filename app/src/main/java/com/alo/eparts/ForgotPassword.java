@@ -38,9 +38,11 @@ public class ForgotPassword extends AppCompatActivity {
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Your subject");
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
         try {
-            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-            finish();
-            Log.i("Finished sending email...", "");
+//            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+//            finish();
+//            Log.i("Finished sending email...", "");
+            Intent intent = new Intent(ForgotPassword.this,ResetPassword.class);
+            startActivity(intent);
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(ForgotPassword.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }

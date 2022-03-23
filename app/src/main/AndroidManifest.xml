@@ -6,9 +6,17 @@
         android:minSdkVersion="23"
         android:targetSdkVersion="31" />
 
+    <meta-data
+        android:name="com.google.android.gms.vision.DEPENDENCIES"
+        android:value="barcode" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -19,16 +27,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Eparts"
         android:usesCleartextTraffic="true">
-        <activity android:name=".payment_method"></activity>
+        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".Manageunavailabilityadd">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".Ratings" />
+        <activity android:name=".EmailActivity" />
+        <activity android:name=".ScannedBarcodeActivity" />
+        <activity android:name=".PictureBarcodeActivity" />
+        <activity android:name=".addproductmanagementseller" />
+        <activity android:name=".productmanagementseller" />
+        <activity android:name=".InventoryManagementSeller" />
+        <activity android:name=".aboutus" />
+        <activity android:name=".countrylanguage" />
+        <activity android:name=".settings" />
+        <activity android:name=".contactus" />
+        <activity android:name=".customerservice" />
+        <activity android:name=".dashboardseller" >
+<!--             <intent-filter>-->
+<!--             <action android:name="android.intent.action.MAIN" />-->
+
+
+<!--             <category android:name="android.intent.category.LAUNCHER" />-->
+<!--             </intent-filter>-->
+        </activity>
+        <activity android:name=".payment_method" />
         <activity android:name=".walletpayementadd" />
         <activity android:name=".BuyPartsStockorder" />
-        <activity android:name=".ForgotPassword" >
-            <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="message/rfc822"/>
-            </intent-filter>
-        </activity>
+        <activity android:name=".ForgotPassword" />
         <activity android:name=".SearchVin" />
         <activity android:name=".ManageSubscriptionSlider" />
         <activity android:name=".partsrequestedit" />
@@ -48,15 +80,7 @@
         <activity android:name=".DeliveryActivity" />
         <activity android:name=".cart" />
         <activity android:name=".BuypartsOrder" />
-        <activity android:name=".ManageSubscription">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+        <activity android:name=".ManageSubscription" />
         <activity android:name=".ManagePayment" />
         <activity android:name=".profileActivity" />
         <activity android:name=".OrderDetails" />

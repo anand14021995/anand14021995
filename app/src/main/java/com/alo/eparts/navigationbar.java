@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alo.eparts.HelperClasses.adapterphone;
@@ -20,6 +21,7 @@ import com.alo.eparts.HelperClasses.phonehelper;
 import com.alo.eparts.catalog.RetrofitAPI;
 import com.alo.eparts.catalog.VinData;
 import com.alo.eparts.recycler.notificationActivity;
+import com.alo.eparts.storage.SharedPrefManager;
 import com.alo.eparts.ui.ModelData;
 import com.google.android.material.navigation.NavigationView;
 
@@ -51,6 +53,7 @@ public class navigationbar extends AppCompatActivity implements NavigationView.O
     ViewPager mViewPager,mViewPagerOrder;
     private ArrayList<VinData> VinDataArratList;
     List<String> model =new ArrayList<String>();
+    TextView textName;
     // images array
     int[] images = {R.drawable.banner, R.drawable.banner, R.drawable.banner};
 
@@ -73,6 +76,9 @@ public class navigationbar extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_navigationbar);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        textName = (TextView)findViewById(R.id.textName);
+        Data data=SharedPrefManager.getInstance(this).getData();
+        textName.setText("Hi "+data.getUser_name());
         phoneRecycler = findViewById(R.id.my_recycler);
         phoneRecycler();
         mViewPager = (ViewPager)findViewById(R.id.viewPagerMain);
@@ -178,6 +184,18 @@ public class navigationbar extends AppCompatActivity implements NavigationView.O
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(!SharedPrefManager.getInstance(this).isLoggedIn())
+        {
+            Intent intent=new Intent(this,MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
+    }
+
     private String Vin;
     private void getSearchVin(String Vin) {
         this.Vin = Vin;
@@ -228,10 +246,10 @@ public class navigationbar extends AppCompatActivity implements NavigationView.O
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper(gradient1, R.drawable.neworder, "Samsung"));
-        phonelocations.add(new phonehelper(gradient4, R.drawable.inprogressorder, "Vivo"));
-        phonelocations.add(new phonehelper(gradient2, R.drawable.completeorder, "Apple"));
-        phonelocations.add(new phonehelper(gradient4, R.drawable.inprogressorder, "Realme"));
+        phonelocations.add(new phonehelper(gradient1, R.drawable.neworder, "New Order"));
+        phonelocations.add(new phonehelper(gradient4, R.drawable.inprogressorder, "In Progress Order"));
+        phonelocations.add(new phonehelper(gradient2, R.drawable.completeorder, "Complete Order"));
+        phonelocations.add(new phonehelper(gradient4, R.drawable.inprogressorder, "Return Order"));
 
 
 
@@ -277,6 +295,9 @@ public class navigationbar extends AppCompatActivity implements NavigationView.O
         }else if(item.getItemId()==R.id.logout){
             logout();
             return true;
+        }else if(item.getItemId()==R.id.settings){
+            Intent intent = new Intent(this,settings.class);
+            this.startActivity(intent);
         }
         return false;
     }
@@ -289,12 +310,16 @@ public class navigationbar extends AppCompatActivity implements NavigationView.O
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int id) {
-                        finish();
-                        Intent i=new Intent();
-                        i.putExtra("Exit", true);
-                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // To clean up all activities
-                        //startActivity(i);
-                        finish();
+                        SharedPrefManager.getInstance(getApplicationContext()).clear();
+                        Intent intent=new Intent(getApplicationContext(),LoginActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+//                        finish();
+//                        Intent i=new Intent();
+//                        i.putExtra("Exit", true);
+//                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // To clean up all activities
+//
+//                        finish();
 
                     }
 

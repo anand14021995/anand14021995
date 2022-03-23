@@ -37,6 +37,8 @@ public class oem_catelogmodel extends AppCompatActivity {
     List<String> codes = new ArrayList<String>();
     List<String> codesid = new ArrayList<String>();
     List<String> model =new ArrayList<String>();
+    String HoldAutocompletetextview,modelHoldAutocompletetextview;
+    private String HoldAutocompletetextviewtext,modelHoldAutocompletetextviewtext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +92,7 @@ public class oem_catelogmodel extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 brandclear.setVisibility(View.GONE);
+                autoCompleteTextView.setText("Select the Brand");
             }
         });
 
@@ -97,6 +100,7 @@ public class oem_catelogmodel extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 modelclear.setVisibility(View.GONE);
+                modelautoCompleteTextView.setText("Select the model");
             }
         });
 
@@ -104,8 +108,27 @@ public class oem_catelogmodel extends AppCompatActivity {
         searchcar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(oem_catelogmodel.this, oemFilterActivity.class);
-                startActivity(intent);
+                HoldAutocompletetextview = autoCompleteTextView.getText().toString();
+                HoldAutocompletetextviewtext = autoCompleteTextView.getEditableText().toString();
+                modelHoldAutocompletetextviewtext = modelautoCompleteTextView.getEditableText().toString();
+
+                modelHoldAutocompletetextview = modelautoCompleteTextView.getText().toString();
+
+//                Intent intent=new Intent(OemCatelogActivity.this,oem_catelogActivity.class);
+//                startActivity(intent);
+                if(HoldAutocompletetextviewtext.equals("Select the Brand") && modelHoldAutocompletetextviewtext.equals("Select the model"))
+                {
+                    Toast.makeText(oem_catelogmodel.this,"Please Select Brand and Model",Toast.LENGTH_SHORT).show();
+
+                }
+                else
+                {
+                    Intent intent=new Intent(oem_catelogmodel.this, oemFilterActivity.class);
+                    intent.putExtra("brand",HoldAutocompletetextview);
+                    intent.putExtra("model",modelHoldAutocompletetextview);
+                    startActivity(intent);
+                }
+
             }
         });
 
@@ -113,7 +136,7 @@ public class oem_catelogmodel extends AppCompatActivity {
     }
 
     private void getBrandData() {
-        Toast.makeText(this,"inisde",Toast.LENGTH_SHORT).show();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.7.10:3000/api/common_management/")
                 .addConverterFactory(GsonConverterFactory.create())

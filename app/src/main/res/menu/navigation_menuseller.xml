@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_group_8217"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/myorder"
+            android:icon="@drawable/ic_group_8218"
+            android:title="Manage Orders" />
+        <item
+            android:id="@+id/quotes"
+            android:icon="@drawable/ic_group_8114"
+            android:title="Manage Save as Quotes" />
+        <item
+            android:id="@+id/nmanageteam"
+            android:icon="@drawable/ic_group_8219"
+            app:showAsAction="always"
+            android:title="Manage Team" />
+        <item
+            android:id="@+id/managepayment"
+            android:icon="@drawable/ic_group"
+            android:title="Manage Payment" />
+        <item
+            android:id="@+id/wishlist"
+            android:icon="@drawable/ic_group_8220"
+            android:title="My Wishlist/Favourites" />
+        <item
+            android:id="@+id/subscriptions"
+            android:icon="@drawable/ic_vector"
+            android:title="My subscriptions" />
+        <item
+            android:id="@+id/manage_vechile"
+            android:icon="@drawable/ic_group__1_"
+            android:title="Manage Vehicles" />
+        <item
+            android:id="@+id/notifications"
+            android:icon="@drawable/ic_vectorb"
+            android:title="Notifications" />
+
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_group__2_"
+            android:title="Manage profile" />
+        <item
+            android:id="@+id/offers"
+            android:icon="@drawable/ic_group__3_"
+            android:title="Make offers" />
+        <item
+            android:id="@+id/partsrequest"
+            android:icon="@drawable/ic_group_8502"
+            android:title="Parts Request" />
+        <item
+            android:id="@+id/reports"
+            android:icon="@drawable/ic_vector__1_"
+            android:title="Reports" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_vector__2_"
+            android:title="Logout" />
+    </group>
+</menu>

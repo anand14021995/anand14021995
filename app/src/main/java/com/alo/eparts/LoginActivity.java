@@ -19,10 +19,12 @@ import com.alo.eparts.RestApi.tokenResponse;
 import com.alo.eparts.model.JWTToken;
 import com.alo.eparts.remote.APICall;
 import com.alo.eparts.remote.RetroClass;
+import com.alo.eparts.storage.SharedPrefManager;
 import com.alo.eparts.tokenmanager.TokenManager;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -68,30 +70,41 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    protected void onResume()
-    {
-        super.onResume();
-        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        String s1 = sh.getString("etuseremail", "");
-        String a = sh.getString("etuserpass", "");
-        etuseremail.setText(s1);
-        etuserpass.setText(String.valueOf(a));
-    }
     @Override
-    protected void onPause() {
-        super.onPause();
-
-        // Creating a shared pref object
-        // with a file name "MySharedPref"
-        // in private mode
-        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        SharedPreferences.Editor myEdit = sharedPreferences.edit();
-
-        // write all the data entered by the user in SharedPreference and apply
-        myEdit.putString("etuseremail", etuseremail.getText().toString());
-        myEdit.putString("etuserpass", etuserpass.getText().toString());
-        myEdit.apply();
+    protected void onStart() {
+        super.onStart();
+        if(SharedPrefManager.getInstance(this).isLoggedIn())
+        {
+            Intent intent=new Intent(this,navigationbar.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
     }
+
+//    protected void onResume()
+//    {
+//        super.onResume();
+//        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+//        String s1 = sh.getString("etuseremail", "");
+//        String a = sh.getString("etuserpass", "");
+//        etuseremail.setText(s1);
+//        etuserpass.setText(String.valueOf(a));
+//    }
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//
+//        // Creating a shared pref object
+//        // with a file name "MySharedPref"
+//        // in private mode
+//        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+//        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+//
+//        // write all the data entered by the user in SharedPreference and apply
+//        myEdit.putString("etuseremail", etuseremail.getText().toString());
+//        myEdit.putString("etuserpass", etuserpass.getText().toString());
+//        myEdit.apply();
+//    }
 
     private void CallLoginService()
     {
@@ -102,12 +115,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 final String username = etuseremail.getText().toString();
                 final String password = etuserpass.getText().toString();
-                /*String jwt = Jwts.builder().claim("email",username).claim("password",password)
-                        .signWith(SignatureAlgorithm.HS256, "secret".getBytes())
-                        .compact();
-                Log.v("JWT : - ",jwt);*/
-                //Toast.makeText(LoginActivity.this,"Login Name--:"+jwt,Toast.LENGTH_SHORT).show();
-
                 APIService service = ApiClient.getClient().create(APIService.class);
             User user = new User();
             user.email = username;
@@ -123,16 +130,21 @@ public class LoginActivity extends AppCompatActivity {
 
                         try {
                             String ResponseJson = response.body().string();
-
+                            Toast.makeText(LoginActivity.this,ResponseJson,Toast.LENGTH_SHORT).show();
                             Gson objGson = new Gson();
                             tokenResponse objResp = objGson.fromJson(ResponseJson, tokenResponse.class);
-                            Toast.makeText(LoginActivity.this,objResp.getMsg(),Toast.LENGTH_SHORT).show();
-                            //Log.v("JWT : - ",objResp.getMsg());
+
+                            Toast.makeText(LoginActivity.this, objResp.getMsg(),Toast.LENGTH_SHORT).show();
+
                             if(objResp.getMsg().equals("succesfully logged in"))
                             {
+                                //Intent intent=new Intent(LoginActivity.this,navigationbar.class);
+                                //startActivity(intent);
+                                //finish();
+                                SharedPrefManager.getInstance(LoginActivity.this).saveUser(objResp.getData());
                                 Intent intent=new Intent(LoginActivity.this,navigationbar.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
-                                finish();
                             }
 
                             //Toast.makeText(LoginActivity.this,"Token Got Successfull",Toast.LENGTH_SHORT).show();
