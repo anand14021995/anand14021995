@@ -21,7 +21,7 @@ public class Cricket extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cricket, container, false);
-        //view order Clicked
+//        view order Clicked
 
         Button button;
 
